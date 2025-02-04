@@ -85,6 +85,7 @@ func main() {
 
 	// Set up a bus to listen for messages
 	bus := pipeline.GetPipelineBus()
+	// TODO: Find why the message is not getting received for detecting voice.
 	bus.AddWatch(func(msg *gst.Message) bool {
 		log.Printf("Received Message: %v", msg.Type()) // Log all message types
 		switch msg.Type() {
